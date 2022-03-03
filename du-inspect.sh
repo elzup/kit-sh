@@ -3,3 +3,4 @@
 DIR=./
 
 du -sch $DIR* |sort -h
+# WIP
