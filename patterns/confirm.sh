@@ -9,4 +9,3 @@ if [ "${ANSWER_YN}" == "y" ]; then
 else
   echo "no"
 fi
-
