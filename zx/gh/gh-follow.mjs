@@ -1,6 +1,11 @@
 #!/usr/bin/env zx
 
-const ids = "".split(",");
+const idsCs = "";
+const ids = idsCs.split(",");
+
+$`echo $MY_GITHUB_TOKEN | gh auth login --with-token`;
+
+// console.log(process.env.MY_GITHUB_TOKEN);
 
 for (const id of ids) {
   await $`sleep 0.5`;
@@ -12,5 +17,10 @@ mutation followUser($userId: ID!) {
 	}
 }'
 `;
-  $([command]);
+  try {
+    const res = $([command]);
+    console.log(res);
+  } catch (e) {
+    console.log(`${id} failed`);
+  }
 }
