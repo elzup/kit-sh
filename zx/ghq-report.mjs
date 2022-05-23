@@ -101,6 +101,7 @@ async function main() {
 
   console.log("");
   console.log("## no sync");
+  nsyncRepos.sort((a, b) => a.sync.localeCompare(b.sync));
   nsyncRepos.forEach((repo) => {
     console.log(repo.dir, repo.sync);
   });
