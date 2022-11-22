@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 outfile=todo.txt
 echo -e "[new text]"$"\n$(cat $outfile)" > $outfile

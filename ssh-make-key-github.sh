@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 name="${NAME:-$1}"
 
 [ -z "$name" ] && echo "usage: ./ssh-make-key.sh <key-name>" && exit 1

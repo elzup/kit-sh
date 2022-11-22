@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 read -p "any question ? (Y/n)" ANSWER_YN
 ANSWER_YN=${ANSWER_YN:-"y"}

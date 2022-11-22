@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 DATA1="AAA\nBBB\nCCC\nDDD\nEEE\nFFF\nGGG\n"
 OUT_FILE=out/mld.txt

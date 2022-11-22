@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 name="${NAME:-$1}"
 
 echo $name
