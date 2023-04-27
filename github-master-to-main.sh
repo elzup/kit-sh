@@ -10,7 +10,7 @@ ESC_UL="\e[4;m"
 ESC_END="\e[m"
 
 https://github.com///git@github.com/elzup/dentime/settings/branches
-echo -e "open ${ESC_UL}https://github.com/$REPO_ID/settings/branches${ESC_END} and"
+echo -e "open ${ESC_UL}https://github.com/$REPO_ID/settings${ESC_END} and"
 echo -e "change default branch from ${ESC_BO}master$ESC_END to ${ESC_BO}main$ESC_END"
 
 read -p "git push origin --delete master ? (Y/n)" ANSWER_YN
