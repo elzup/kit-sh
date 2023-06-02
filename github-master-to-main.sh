@@ -4,8 +4,7 @@ git branch -m main
 git push origin HEAD -u
 
 
-REPO_ID=$(git config --get remote.origin.url |sed -e 's/.*github.com.\(.*\).git/\1/') #ssh
-
+REPO_ID=$(git config --get remote.origin.url |sed -e 's/.*github.com.\(.*\/.*\)\(\.git\)*/\1/')
 ESC_BO="\e[1;m"
 ESC_UL="\e[4;m"
 ESC_END="\e[m"
