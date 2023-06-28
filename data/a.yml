@@ -1,0 +1,13 @@
+paths:
+  /a:
+    k: v
+  /b:
+    k: v
+  /b/x:
+    k: v
+  /b/y:
+    k: v
+  /c:
+    k: v
+components:
+  k: v
