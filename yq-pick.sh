@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-yq 'paths.\/b' ./data/a.yml
+# pick paths./b/*
+yq  '. + { paths: [.paths | to_entries[] | select(.key | startswith("/b"))] |from_entries }' ./data/a.yml 
+

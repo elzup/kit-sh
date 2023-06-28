@@ -1,5 +1,5 @@
 paths:
-  /a:
+  a:
     k: v
   /b:
     k: v
@@ -7,7 +7,7 @@ paths:
     k: v
   /b/y:
     k: v
-  /c:
+  c:
     k: v
 components:
   k: v
