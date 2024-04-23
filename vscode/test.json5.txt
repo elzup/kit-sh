@@ -1,0 +1,6 @@
+{
+// "workbench.colorTheme": "Hackpot Garden Of Atlantis", // @theme-auto-change Mon
+  "workbench.colorTheme": "Hackpot Garden Of Atlantis", // @theme-auto-change Tue
+// "workbench.colorTheme": "Hackpot Garden Of Atlantis", // @theme-auto-change Wed
+// "workbench.colorTheme": "Hackpot Garden Of Atlantis", // @theme-auto-change Thu
+}
