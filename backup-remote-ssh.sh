@@ -25,16 +25,16 @@ LOCAL_DEST="./" # ローカルの保存先ディレクトリ
 # リモートで圧縮
 echo "Compressing the remote directory..."
 echo "Executing: ssh $REMOTE_USER \"zip -r ~/$ZIP_FILE $REMOTE_DIR\""
-# ssh "$REMOTE_USER" "zip -r ~/$ZIP_FILE $REMOTE_DIR"
+ssh "$REMOTE_USER" "zip -r ~/$ZIP_FILE $REMOTE_DIR"
 
 # 圧縮ファイルをダウンロード
 echo "Downloading the zip file..."
 echo "Executing: scp $REMOTE_USER:~/$ZIP_FILE $LOCAL_DEST"
-# scp "$REMOTE_USER:~/$ZIP_FILE" "$LOCAL_DEST"
+scp "$REMOTE_USER:~/$ZIP_FILE" "$LOCAL_DEST"
 
 # リモートの圧縮ファイルを削除
 echo "Cleaning up the remote zip file..."
 echo "Executing: ssh $REMOTE_USER \"rm -f ~/$ZIP_FILE\""
-# ssh "$REMOTE_USER" "rm -f ~/$ZIP_FILE"
+ssh "$REMOTE_USER" "rm -f ~/$ZIP_FILE"
 
 echo "Download completed. The zip file is saved to $LOCAL_DEST$ZIP_FILE"
