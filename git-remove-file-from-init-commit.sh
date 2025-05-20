@@ -14,16 +14,12 @@ if ! git rev-parse --git-dir > /dev/null 2>&1; then
   exit 1
 fi
 
-# 各ファイルが tracked されているか確認
-for f in "$@"; do
-  if ! git ls-files --error-unmatch -- "$f" > /dev/null 2>&1; then
-    echo "Error: ファイルが tracked されていません → \"$f\"" >&2
-    exit 1
-  fi
-done
+if ! command -v git-filter-repo > /dev/null 2>&1; then
+  echo "Error: git-filter-repo が見つかりません。インストールしてください。" >&2
+  exit 1
+fi
 
-# ファイルを削除（作業ツリーとインデックスから）
-git rm -- "$@"
+git filter-repo --force --invert-paths \
+  $(printf -- '--path %q ' "$@")
 
-git commit -m "Remove specified files"
-echo "Removed and committed: $*"
+echo "Successfully removed all history of: $*"
