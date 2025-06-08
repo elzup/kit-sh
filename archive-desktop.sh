@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 today=$(date "+%Y%m%d")
 backupdir=~/backup/desktop$today/
 mkdir -p $backupdir
