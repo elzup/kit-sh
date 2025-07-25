@@ -9,6 +9,7 @@
 #!/bin/bash
 
 target_dir="$1"
+prefix="frame_d_"
 
 if [ -z "$target_dir" ]; then
   echo "Usage: $0 <target_directory>"
@@ -20,9 +21,9 @@ if [ ! -d "$target_dir" ]; then
 fi
 cd "$target_dir" || exit 1
 count=1
-for file in frame_d_*.jpg; do
+for file in "$prefix"*.jpg; do
   if [[ -f "$file" ]]; then
-    new_name=$(printf "frame_d_%04d.jpg" "$count")
+    new_name=$(printf "%s%04d.jpg" "$prefix" "$count")
     mv "$file" "$new_name"
     echo "Renamed '$file' to '$new_name'"
     count=$((count + 1))
