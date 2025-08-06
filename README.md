@@ -20,3 +20,9 @@ Host github.com
 export NAME=yourkeyname
 curl -s https://raw.githubusercontent.com/elzup/kit-sh/main/github-master-to-main.sh | bash
 ```
+
+### cline_setup.sh
+
+```
+~/@sh/cline_setup.sh
+```
