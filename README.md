@@ -24,5 +24,5 @@ curl -s https://raw.githubusercontent.com/elzup/kit-sh/main/github-master-to-mai
 ### cline_setup.sh
 
 ```
-~/@sh/cline_setup.sh
+~/@sh/syncair_agent_rules.sh
 ```
