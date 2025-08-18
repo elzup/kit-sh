@@ -15,4 +15,10 @@ mkdir -p .cursor/rules
 rsync -av ~/.clinerules/ .cursor/rules/ --exclude=.git --exclude=README.md
 
 # CLAUDE.md
-# ~/.clinerules/\*.md の README.md 以外を参照してください。
+msg="~/.clinerules/\*.md の README.md 以外を参照してください。"
+touch CLAUDE.md
+
+if ! grep -Fxq "$msg" CLAUDE.md; then
+  echo "$msg" >> CLAUDE.md
+fi
+
