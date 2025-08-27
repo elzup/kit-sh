@@ -3,7 +3,7 @@
 import shm from 'shm-typed-array'
 
 // コマンドライン引数から SHM 名を取得
-const shmName = process.argv[2] || process.argv[3]
+const shmName = process.argv[2] || process.argv[3] // NOTE: zx と node で違う？
 
 if (!shmName) {
   console.error('SHM name is required')
@@ -21,4 +21,5 @@ if (!buf) {
 const ascii = Buffer.from(buf)
   .toString('ascii')
   .replace(/[^\x20-\x7E\n\t]/g, '')
+  .substring(0, 100)
 process.stdout.write(ascii)
