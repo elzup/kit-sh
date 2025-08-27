@@ -1,12 +1,16 @@
+#!/usr/bin/env zx
+
 import shm from 'shm-typed-array'
 
-// コマンドライン引数から SHM 名を取得（デフォルト: /frame_shm）
-const shmName = process.argv[2]
+// コマンドライン引数から SHM 名を取得
+const shmName = process.argv[2] || process.argv[3]
 
 if (!shmName) {
   console.error('SHM name is required')
   process.exit(1)
 }
+
+console.log(`SHM name: ${shmName}`)
 
 const buf = shm.get(shmName, 'Buffer')
 if (!buf) {
