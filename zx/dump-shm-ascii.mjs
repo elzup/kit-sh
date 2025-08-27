@@ -1,9 +1,10 @@
-#!/usr/bin/env zx
+#!/usr/bin/env node
 
 import shm from 'shm-typed-array'
 
 // コマンドライン引数から SHM 名を取得
-const shmName = process.argv[2] || process.argv[3] // NOTE: zx と node で違う？
+const shmName = process.argv[2]
+const len = process.argv[3] || 100
 
 if (!shmName) {
   console.error('SHM name is required')
@@ -21,5 +22,5 @@ if (!buf) {
 const ascii = Buffer.from(buf)
   .toString('ascii')
   .replace(/[^\x20-\x7E\n\t]/g, '')
-  .substring(0, 100)
+  .substring(0, len)
 process.stdout.write(ascii)
