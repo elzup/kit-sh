@@ -22,3 +22,10 @@ if ! grep -Fxq "$msg" CLAUDE.md; then
   echo "$msg" >> CLAUDE.md
 fi
 
+# GEMINI.md
+touch GEMINI.md
+
+if ! grep -Fxq "$msg" GEMINI.md; then
+  echo "$msg" >> GEMINI.md
+fi
+
