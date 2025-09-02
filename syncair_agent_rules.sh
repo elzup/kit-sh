@@ -14,18 +14,23 @@ fi
 mkdir -p .cursor/rules
 rsync -av ~/.clinerules/ .cursor/rules/ --exclude=.git --exclude=README.md
 
-# CLAUDE.md
-msg="~/.clinerules/\*.md の README.md 以外を参照してください。"
-touch CLAUDE.md
+append_unique_line() {
+  local file=$1
+  local msg=$2
 
-if ! grep -Fxq "$msg" CLAUDE.md; then
-  echo "$msg" >> CLAUDE.md
-fi
+  touch "$file"
+  if ! grep -Fxq "$msg" "$file"; then
+    printf '%s\n' "$msg" >> "$file"
+  fi
+}
+
+msg="~/.clinerules/\*.md の README.md 以外を参照してください。"
+
+# CLAUDE.md
+append_unique_line CLAUDE.md "$msg"
 
 # GEMINI.md
-touch GEMINI.md
+append_unique_line GEMINI.md "$msg"
 
-if ! grep -Fxq "$msg" GEMINI.md; then
-  echo "$msg" >> GEMINI.md
-fi
-
+# Codex
+append_unique_line AGENTS.md "$msg"
